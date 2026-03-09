@@ -13,6 +13,7 @@ import { Airdrop } from "./Airdrop"
 import '@solana/wallet-adapter-react-ui/styles.css';
 import './App.css';
 import { SendTokens } from './SendTokens';
+import { SignMessage } from './SignMessage';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
                       <div className="features-grid">
                         <Airdrop />
                         <SendTokens />
+                        <SignMessage />
                       </div>
                     </main>
                   </div>

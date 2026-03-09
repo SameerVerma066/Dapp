@@ -11,17 +11,24 @@ A decentralized application built with React and Solana blockchain, enabling use
 
 ## Features Implemented ✅
 
-- **Wallet Connection**: Users can connect their Solana wallet to the application
-- **Wallet Disconnection**: Users can disconnect their wallet seamlessly
-- **SOL Airdrop**: Request SOL airdrops on devnet through Alchemy RPC endpoint
+- **Wallet Connection**: Connect any Solana wallet (Phantom, Solflare, etc.)
+- **Wallet Disconnection**: Disconnect wallet seamlessly from the header
+- **SOL Airdrop**: Request devnet SOL via Alchemy RPC — with input validation and balance auto-refresh on connect
+- **Check Balance**: View current SOL balance, displayed inside the Airdrop card
+- **Send SOL**: Transfer SOL to any wallet address with full input validation and error handling
+- **Sign Message**: Cryptographically sign arbitrary messages using `ed25519`, with signature verified and displayed via `bs58` encoding
+
+## UI & Styling ✅
+
+- Dark-themed responsive layout with glassmorphism cards
+- Solana brand gradient (green → purple) used across titles and buttons
+- Three-column responsive grid (`Airdrop + Balance`, `Send SOL`, `Sign Message`) that stacks on mobile
+- Individual CSS modules per component (`Airdrop.css`, `GetBalance.css`, `SendTokens.css`, `SignMessage.css`)
 
 ## Features To Be Added 🚧
 
-- **Send SOL**: Transfer SOL to other wallet addresses
-- **Sign a Message**: Cryptographically sign messages with connected wallet
-- **Show User Balance**: Display current SOL balance
 - **Token Balance**: View SPL token balances
-- **Transfer Tokens**: Send SPL tokens to other addresses
+- **Transfer SPL Tokens**: Send SPL tokens to other addresses
 
 ## Getting Started
 
