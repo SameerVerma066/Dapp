@@ -19,7 +19,7 @@ import { SignMessage } from './SignMessage';
 function App() {
   
   return (
-    <ConnectionProvider endpoint={"https://solana-devnet.g.alchemy.com/v2/7n4oFun6tvvi2IgrySCa3Xsnvbbtmwu4"}>
+    <ConnectionProvider endpoint={import.meta.env.VITE_ALCHEMY_RPC}>
             <WalletProvider wallets={[]} autoConnect>
                 <WalletModalProvider>
                   <div className="app-container">
