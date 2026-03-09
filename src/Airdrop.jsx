@@ -1,16 +1,12 @@
 import { useConnection, useWallet } from "@solana/wallet-adapter-react"
 import "./Airdrop.css"
-import { useEffect, useState } from "react";
+import { LAMPORTS_PER_SOL } from "@solana/web3.js";
+import { GetBalance } from "./GetBalance";
 
 export function Airdrop() {
     const { connection } = useConnection();
     const wallet = useWallet();
-    const [balance, setBalance] = useState(0);
-    useEffect(() => {
-    if (wallet.publicKey) {
-        getBalance();
-    }
-}, [wallet.publicKey])
+    
 
     async function sendAirdroptoUser() {
         const amount = document.getElementById("airdropAmount").value;
@@ -26,18 +22,11 @@ export function Airdrop() {
         }
         
         try {
-            await connection.requestAirdrop(wallet.publicKey, amount * 1000000000);
+            await connection.requestAirdrop(wallet.publicKey, amount * LAMPORTS_PER_SOL);
             alert(`Successfully airdropped ${amount} SOL!`);
         } catch (error) {
             alert("Airdrop failed. Please try again.");
             console.error(error);
-        }
-    }
-    async function getBalance(){
-        if(wallet.publickey){
-            const amount = await connection.getBalance(wallet.publicKey);
-            const balanceInSOL = amount / 1000000000;
-            setBalance(balanceInSOL);
         }
     }
 
@@ -67,20 +56,10 @@ export function Airdrop() {
                     Request Airdrop
                 </button>
                 
-                <button onClick={getBalance} className="balance-button">
-                    Get Balance
-                </button>
+             
             </div>
             
-            {balance >= 0 && (
-                <div className="balance-display">
-                    <div className="balance-label">Your Balance</div>
-                    <div>
-                        <span className="balance-amount">{balance.toFixed(4)}</span>
-                        <span className="balance-currency">SOL</span>
-                    </div>
-                </div>
-            )}
+            <GetBalance />
             
             <div className="airdrop-info">
                 <div className="airdrop-info-title">ℹ️ Note:</div>

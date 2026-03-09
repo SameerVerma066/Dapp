@@ -1,0 +1,95 @@
+.send-container {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.send-container:hover {
+  box-shadow: 0 12px 48px rgba(153, 69, 255, 0.2);
+  border-color: var(--solana-blue);
+}
+
+.send-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.send-title {
+  font-size: 28px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--solana-blue) 0%, var(--solana-green) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+
+.send-subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.send-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.send-input {
+  width: 100%;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.send-input::placeholder {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.send-input:focus {
+  border-color: var(--solana-blue);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(153, 69, 255, 0.1);
+}
+
+.send-button {
+  padding: 16px 32px;
+  background: linear-gradient(135deg, var(--solana-blue) 0%, var(--solana-green) 100%);
+  border: none;
+  border-radius: 12px;
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(153, 69, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.send-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(153, 69, 255, 0.5);
+}
+
+.send-button:active {
+  transform: translateY(0);
+}
+
+.send-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
